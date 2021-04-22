@@ -1,0 +1,41 @@
+---
+name: 棚ブラケットを作った
+route: /make/shelf-bracket-1
+---
+# 今回のできごと
+
+* 今回の印刷物
+* 設置面の反り対策を行った
+* 強度不足で印刷物が破損
+* Luban のABS設定を行った
+* gcodeファイルのコマンドを編集した
+
+## 印刷物
+
+* モデル：フリーモデル
+* 対象ファイル：+Bracket+V2
+* 印刷物パーツ数：3
+* カテゴリ：bracket
+* タグ：shelf bracket
+* 使用フィラメント：ABA, PLA
+* 使用材料：木ネジ
+
+## 接地面の反り対策
+
+* ブリムをつけた
+* ブリムライン数を20にした
+
+## 強度不足で印刷物が破損
+
+* インフィル密度を上げた 8 -> 20
+
+## LubanのABS設定
+
+* リンク　Snapmaker > ABS
+* Snapmaker公式のABS設定動画を参考にした How to 3D Print with ABS Filament \[Snapmaker Academy]
+
+  ![abs設定](/img/has-heated-bed.png "ABS設定")
+
+## gcodeファイルのコマンドを編集した
+
+* gcodeファイルのM106の行をコメントアウト、または削除してファンを停止
