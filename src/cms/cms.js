@@ -1,78 +1,90 @@
-import { init } from 'netlify-cms-app'
+import { init } from "netlify-cms-app";
 
 init({
   config: {
     backend: {
-      name: 'git-gateway'
+      name: "git-gateway",
     },
     load_config_file: false,
-    media_folder: 'docs/images/uploads',
-    public_folder: '/images/uploads',
+    media_folder: "docs/images/uploads",
+    public_folder: "/images/uploads",
     collections: [
       {
-        label: 'Docs',
-        label_singular: 'Doc',
-        name: 'docs',
-        folder: 'docs',
-        create: true,
-        slug: '{{menu}}{{name}}',
-        identifier_field: 'route',
-        extension: 'mdx',
-        format: 'frontmatter',
+        label: "Posts",
+        name: "posts",
+        folder: "docs/posts",
         fields: [
+          { name: "title", label: "Title", widget: "string" },
           {
-            label: 'Name',
-            name: 'name'
+            name: "categories",
+            label: "Categories",
+            widget: "categories",
+            separator: "__",
           },
-          {
-            label: 'Menu',
-            name: 'menu',
-            required: false
-          },
-          {
-            label: 'Route',
-            name: 'route'
-          },
-          {
-            label: 'Body',
-            name: 'body',
-            widget: 'markdown'
-          },
-        ]
+        ],
       },
       {
-        label: 'Settings',
-        name: 'settings',
+        label: "Docs",
+        label_singular: "Doc",
+        name: "docs",
+        folder: "docs",
+        create: true,
+        slug: "{{menu}}{{name}}",
+        identifier_field: "route",
+        extension: "mdx",
+        format: "frontmatter",
+        fields: [
+          {
+            label: "Name",
+            name: "name",
+          },
+          {
+            label: "Menu",
+            name: "menu",
+            required: false,
+          },
+          {
+            label: "Route",
+            name: "route",
+          },
+          {
+            label: "Body",
+            name: "body",
+            widget: "markdown",
+          },
+        ],
+      },
+      {
+        label: "Settings",
+        name: "settings",
         files: [
           {
-            label: 'Menu',
-            name: 'menu',
-            file: 'config/menu.json',
+            label: "Menu",
+            name: "menu",
+            file: "config/menu.json",
             fields: [
               {
-                label: 'Menu Items',
-                name: 'menuItems',
-                widget: 'list',
+                label: "Menu Items",
+                name: "menuItems",
+                widget: "list",
                 fields: [
                   {
-                    label: 'Name',
-                    name: 'name'
+                    label: "Name",
+                    name: "name",
                   },
                   {
-                    label: 'Menu',
-                    name: 'menu',
-                    widget: 'list',
-                    required: false
-                  }
+                    label: "Menu",
+                    name: "menu",
+                    widget: "list",
+                    required: false,
+                  },
                 ],
-                default: [
-                  'Welcome'
-                ]
-              }
-            ]
-          }
-        ]
-      }
+                default: ["Welcome"],
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });
