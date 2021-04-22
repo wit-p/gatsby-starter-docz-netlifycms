@@ -8,12 +8,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `YOUR_ANALYTICS_ID`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-195305300-1`,
+      },
+    },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
