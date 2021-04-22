@@ -7,7 +7,6 @@ module.exports = {
         modulePath: `../src/cms/cms.js`, // This needs to be relative to the .docz directory
       },
     },
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
